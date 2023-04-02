@@ -52,18 +52,18 @@ export default {
       this.$emit('change', param);
     },
     handleMouseDown(e) {
-      // this.handleChange(e, true)
-      window.addEventListener('mousemove', this.handleChange);
-      window.addEventListener('mouseup', this.handleChange);
-      window.addEventListener('mouseup', this.handleMouseUp);
+      this.handleChange(e, true)
+      // window.addEventListener('mousemove', this.handleChange);
+      // window.addEventListener('mouseup', this.handleChange);
+      // window.addEventListener('mouseup', this.handleMouseUp);
     },
     handleMouseUp(e) {
       this.unbindEventListeners();
     },
     unbindEventListeners() {
-      window.removeEventListener('mousemove', this.handleChange);
-      window.removeEventListener('mouseup', this.handleChange);
-      window.removeEventListener('mouseup', this.handleMouseUp);
+      // window.removeEventListener('mousemove', this.handleChange);
+      // window.removeEventListener('mouseup', this.handleChange);
+      // window.removeEventListener('mouseup', this.handleMouseUp);
     },
   },
 };
@@ -74,7 +74,7 @@ export default {
     ref="container"
     class="vc-saturation"
     :style="{ background: bgColor }"
-    @mousedown="handleMouseDown"
+    @mousedown.stop="handleMouseDown"
     @touchmove="handleChange"
     @touchstart="handleChange"
   >

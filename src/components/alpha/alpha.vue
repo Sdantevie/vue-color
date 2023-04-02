@@ -54,15 +54,15 @@ export default {
     },
     handleMouseDown(e) {
       this.handleChange(e, true);
-      window.addEventListener('mousemove', this.handleChange);
-      window.addEventListener('mouseup', this.handleMouseUp);
+      // window.addEventListener('mousemove', this.handleChange);
+      // window.addEventListener('mouseup', this.handleMouseUp);
     },
     handleMouseUp() {
       this.unbindEventListeners();
     },
     unbindEventListeners() {
-      window.removeEventListener('mousemove', this.handleChange);
-      window.removeEventListener('mouseup', this.handleMouseUp);
+      // window.removeEventListener('mousemove', this.handleChange);
+      // window.removeEventListener('mouseup', this.handleMouseUp);
     },
   },
 };
@@ -77,7 +77,7 @@ export default {
     <div
       ref="container"
       class="vc-alpha-container"
-      @mousedown="handleMouseDown"
+      @mousedown.stop="handleMouseDown"
       @touchmove="handleChange"
       @touchstart="handleChange"
     >

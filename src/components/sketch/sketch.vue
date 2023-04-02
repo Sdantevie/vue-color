@@ -130,14 +130,14 @@ export default {
           class="vc-sketch-presets-color"
           :aria-label="`Color:${c}`"
           :style="{ background: c }"
-          @click="handlePreset(c)"
+          @mousedown.stop="handlePreset(c)"
         />
         <div
           v-else
           :key="c"
           :aria-label="`Color:${c}`"
           class="vc-sketch-presets-color"
-          @click="handlePreset(c)"
+          @mousedown.stop="handlePreset(c)"
         >
           <Checkboard />
         </div>
