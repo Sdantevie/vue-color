@@ -28,6 +28,7 @@
     "build:dist": "rm -rf ./dist && rollup --bundleConfigAsCjs --config ./build/build.dist.js",
     "build:style": "",
     "build:website": "vue-cli-service build --dest website dev/serve.js",
+    "postinstall": "yarn run build:dist",
     "lint": "eslint --fix --ext .js,.vue ./",
     "gen": "node ./scripts/gen.js",
     "gen:compoents": "node ./scripts/gen-compoents.js",
